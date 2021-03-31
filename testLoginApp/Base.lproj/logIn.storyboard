@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="testLoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="testLoginApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -44,6 +44,7 @@
                                         </state>
                                         <connections>
                                             <action selector="logInPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="ODj-M0-I7z"/>
+                                            <segue destination="31g-Qj-b7q" kind="presentation" id="W5J-if-jbG"/>
                                         </connections>
                                     </button>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="1eK-sA-w0i">
@@ -87,6 +88,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-423" y="74"/>
+        </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="6G3-WB-0Cw">
+            <objects>
+                <viewController id="31g-Qj-b7q" customClass="WelcomeViewController" customModule="testLoginApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XpD-3P-tSQ">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nNS-7I-1AO">
+                                <rect key="frame" x="171" y="100" width="48" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ack-mF-TKS">
+                                <rect key="frame" x="154" y="614" width="82" height="42"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <state key="normal" title="Log out">
+                                    <color key="titleColor" red="1" green="0.43844272029999998" blue="0.41709511189999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="logOutPressed" destination="31g-Qj-b7q" eventType="touchUpInside" id="I4f-v6-bxU"/>
+                                    <segue destination="cnl-vv-kUb" kind="unwind" unwindAction="unwindFor:" id="gaX-ea-AFd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NaC-oj-KET"/>
+                        <color key="backgroundColor" red="0.75856545850000001" green="0.82914035620000004" blue="0.87195414299999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="nNS-7I-1AO" firstAttribute="top" secondItem="NaC-oj-KET" secondAttribute="top" constant="100" id="IYt-22-P08"/>
+                            <constraint firstItem="nNS-7I-1AO" firstAttribute="centerX" secondItem="XpD-3P-tSQ" secondAttribute="centerX" id="Nvg-yL-lLV"/>
+                            <constraint firstItem="ack-mF-TKS" firstAttribute="centerX" secondItem="XpD-3P-tSQ" secondAttribute="centerX" id="fCl-Sf-Njp"/>
+                            <constraint firstItem="NaC-oj-KET" firstAttribute="bottom" secondItem="ack-mF-TKS" secondAttribute="bottom" constant="100" id="hVM-MJ-hqf"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="welcomeLabel" destination="nNS-7I-1AO" id="I3R-y9-JfY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bdc-PO-Jqj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="cnl-vv-kUb" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="322" y="74"/>
         </scene>
     </scenes>
     <resources>

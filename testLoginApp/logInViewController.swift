@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var bottomConstraint: NSLayoutConstraint!
     @IBOutlet var allElementsStackView: UIStackView!
@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
         loginButton.layer.cornerRadius = 10
         
         userNameTextField.delegate = self
@@ -48,16 +48,32 @@ class ViewController: UIViewController, UITextFieldDelegate {
             object: nil )
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else {
+            return
+        }
+        welcomeVC.userName = userNameTextField.text
+    }
+    
+    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(false)
     }
     
     
+    @IBAction func unwind(for segue: UIStoryboardSegue) {
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+    
+    }
+    
     @IBAction func logInPressed() {
-        if userNameTextField.text == userName  {
-            if passwordTextField.text == userPassword {
-                
-            }
+        if userNameTextField.text == userName,
+           passwordTextField.text == userPassword {
+
+
+
+
         } else {
             showAlert(with: "Invalid login or password 🧐",
                       and: "Please, enter correct login and password!")
@@ -99,7 +115,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
 }
 
-extension ViewController {
+extension LoginViewController {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userNameTextField {

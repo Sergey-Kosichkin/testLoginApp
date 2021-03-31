@@ -13,6 +13,7 @@
 		F19F5B452612ECB500F8D935 /* logIn.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19F5B432612ECB500F8D935 /* logIn.storyboard */; };
 		F19F5B472612ECB600F8D935 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F19F5B462612ECB600F8D935 /* Assets.xcassets */; };
 		F19F5B4A2612ECB600F8D935 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F19F5B482612ECB600F8D935 /* LaunchScreen.storyboard */; };
+		F19F5B5F2614EC8800F8D935 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19F5B5E2614EC8800F8D935 /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F19F5B462612ECB600F8D935 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F19F5B492612ECB600F8D935 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F19F5B4B2612ECB600F8D935 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F19F5B5E2614EC8800F8D935 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				F19F5B3D2612ECB500F8D935 /* AppDelegate.swift */,
 				F19F5B3F2612ECB500F8D935 /* SceneDelegate.swift */,
 				F19F5B412612ECB500F8D935 /* logInViewController.swift */,
+				F19F5B5E2614EC8800F8D935 /* WelcomeViewController.swift */,
 				F19F5B432612ECB500F8D935 /* logIn.storyboard */,
 				F19F5B462612ECB600F8D935 /* Assets.xcassets */,
 				F19F5B482612ECB600F8D935 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19F5B422612ECB500F8D935 /* logInViewController.swift in Sources */,
+				F19F5B5F2614EC8800F8D935 /* WelcomeViewController.swift in Sources */,
 				F19F5B3E2612ECB500F8D935 /* AppDelegate.swift in Sources */,
 				F19F5B402612ECB500F8D935 /* SceneDelegate.swift in Sources */,
 			);
@@ -287,14 +291,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = HW5V2H79D4;
 				INFOPLIST_FILE = testLoginApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Sergey.Kosichkin.testLoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -308,14 +312,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = HW5V2H79D4;
 				INFOPLIST_FILE = testLoginApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = Sergey.Kosichkin.testLoginApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
