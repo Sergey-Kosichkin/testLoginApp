@@ -26,6 +26,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         loginButton.layer.cornerRadius = 10
         
         userNameTextField.delegate = self
+        passwordTextField.delegate = self
         passwordTextField.enablesReturnKeyAutomatically = true
     
         bottomConstraint.constant =
@@ -104,6 +105,9 @@ extension ViewController {
         if textField == userNameTextField {
             textField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
+        }
+        if textField == passwordTextField {
+            logInPressed()
         }
         return true
     }
