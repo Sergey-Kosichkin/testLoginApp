@@ -70,10 +70,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBAction func logInPressed() {
         if userNameTextField.text == userName,
            passwordTextField.text == userPassword {
-
-
-
-
+            
+            performSegue(withIdentifier: "welcomeMessage", sender: nil)
         } else {
             showAlert(with: "Invalid login or password 🧐",
                       and: "Please, enter correct login and password!")
