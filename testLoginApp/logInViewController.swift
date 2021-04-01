@@ -20,18 +20,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     private let userName = "User"
     private let userPassword = "Password"
     
+    // MARK: override func
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         loginButton.layer.cornerRadius = 10
         
         userNameTextField.delegate = self
         passwordTextField.delegate = self
         passwordTextField.enablesReturnKeyAutomatically = true
-    
+        
         bottomConstraint.constant =
             (self.view.bounds.height - allElementsStackView.bounds.height) / 2
-        
     }
     
     override func viewWillLayoutSubviews() {
@@ -55,16 +55,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         welcomeVC.userName = userNameTextField.text
     }
     
-    
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(false)
     }
     
     
+    // MARK: IBAction func
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         userNameTextField.text = ""
         passwordTextField.text = ""
-    
+        
     }
     
     @IBAction func logInPressed() {
@@ -82,37 +82,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func forgotUserNamePressed() {
         showAlert(with: "Oops!", and: "Your name is \(userName) 😅")
-        
     }
     
     @IBAction func forgotPasswordPressed() {
         showAlert(with: "Oops!", and: "Your password is \(userPassword) 😇")
     }
     
-    
+    // MARK: private func
     @objc
     private func handle(keyboardShowNotification notification: Notification) {
-        
         if let userInfo = notification.userInfo,
            let keyboardRectangle =
             userInfo[UIResponder.keyboardFrameEndUserInfoKey] as? CGRect {
             
             if bottomConstraint.constant < keyboardRectangle.height {
                 bottomConstraint.constant = keyboardRectangle.height
+                animateConstraint()
             }
         }
     }
     
     @objc
     private func handle(keyboardHideNotification notification: Notification) {
-        
         bottomConstraint.constant =
             (self.view.bounds.height - allElementsStackView.bounds.height) / 2
+        animateConstraint()
     }
-    
-    
 }
 
+// MARK: extension
 extension LoginViewController {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -126,7 +124,12 @@ extension LoginViewController {
         return true
     }
     
-
+    
+    private func animateConstraint() {
+        UIView.animate(withDuration: 0.5) {
+            self.view.layoutIfNeeded()
+        }
+    }
     
     private func showAlert(with title: String, and message: String) {
         let alert = UIAlertController(title: title,
