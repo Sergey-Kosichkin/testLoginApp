@@ -17,7 +17,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         welcomeLabel.text = "Welcome, " + userName + " !"
-        self.isModalInPresentation = true
+        isModalInPresentation = true
        
     }
     

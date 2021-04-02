@@ -32,9 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         bottomConstraint.constant =
             (self.view.bounds.height - allElementsStackView.bounds.height) / 2
-    }
-    
-    override func viewWillLayoutSubviews() {
+        
         NotificationCenter.default.addObserver(
             self,
             selector: #selector(handle(keyboardShowNotification:)),
@@ -48,15 +46,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             object: nil )
     }
     
+//    override func viewWillLayoutSubviews() {
+//    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let welcomeVC = segue.destination as? WelcomeViewController else {
-            return
-        }
+        let welcomeVC = segue.destination as! WelcomeViewController 
         welcomeVC.userName = userNameTextField.text
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(false)
+        view.endEditing(true)
     }
     
     
@@ -76,7 +75,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             showAlert(with: "Invalid login or password 🧐",
                       and: "Please, enter correct login and password!")
             passwordTextField.text = ""
-            return
+            // return
         }
     }
     
@@ -115,7 +114,7 @@ extension LoginViewController {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userNameTextField {
-            textField.resignFirstResponder()
+            // textField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
         }
         if textField == passwordTextField {

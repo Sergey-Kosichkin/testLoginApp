@@ -111,7 +111,7 @@
                                 </state>
                                 <connections>
                                     <action selector="logOutPressed" destination="31g-Qj-b7q" eventType="touchUpInside" id="I4f-v6-bxU"/>
-                                    <segue destination="cnl-vv-kUb" kind="unwind" unwindAction="unwindFor:" id="gaX-ea-AFd"/>
+                                    <segue destination="cnl-vv-kUb" kind="unwind" unwindAction="unwindFor:" id="04a-fF-MT6"/>
                                 </connections>
                             </button>
                         </subviews>
