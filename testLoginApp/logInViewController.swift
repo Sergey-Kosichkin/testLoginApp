@@ -45,9 +45,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             name: UIResponder.keyboardWillHideNotification,
             object: nil )
     }
-    
-//    override func viewWillLayoutSubviews() {
-//    }
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let welcomeVC = segue.destination as! WelcomeViewController 
@@ -75,7 +73,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             showAlert(with: "Invalid login or password 🧐",
                       and: "Please, enter correct login and password!")
             passwordTextField.text = ""
-            // return
         }
     }
     
@@ -114,7 +111,6 @@ extension LoginViewController {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == userNameTextField {
-            // textField.resignFirstResponder()
             passwordTextField.becomeFirstResponder()
         }
         if textField == passwordTextField {

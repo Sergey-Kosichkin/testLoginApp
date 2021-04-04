@@ -17,11 +17,8 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         
         welcomeLabel.text = "Welcome, " + userName + " !"
-        isModalInPresentation = true
        
     }
     
-    @IBAction func logOutPressed() {
-        dismiss(animated: true)
-    }
+
 }
