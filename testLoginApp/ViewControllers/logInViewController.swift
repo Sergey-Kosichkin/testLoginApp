@@ -16,9 +16,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var passwordTextField: UITextField!
     
     @IBOutlet var loginButton: UIButton!
-    
-//    private let userName = "User"
-//    private let userPassword = "Password"
+
     
     // MARK: override func
     override func viewDidLoad() {
