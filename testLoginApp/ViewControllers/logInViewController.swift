@@ -17,8 +17,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var loginButton: UIButton!
     
-    private let userName = "User"
-    private let userPassword = "Password"
+//    private let userName = "User"
+//    private let userPassword = "Password"
     
     // MARK: override func
     override func viewDidLoad() {
@@ -53,6 +53,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        //super.
         view.endEditing(true)
     }
     
@@ -65,8 +66,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func logInPressed() {
-        if userNameTextField.text == userName,
-           passwordTextField.text == userPassword {
+        if userNameTextField.text == User.get(.name),
+           passwordTextField.text == User.get(.password) {
             
             performSegue(withIdentifier: "welcomeMessage", sender: nil)
         } else {
@@ -77,11 +78,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func forgotUserNamePressed() {
-        showAlert(with: "Oops!", and: "Your name is \(userName) 😅")
+        showAlert(with: "Oops!", and: "Your name is \(User.get(.name)) 😅")
     }
     
     @IBAction func forgotPasswordPressed() {
-        showAlert(with: "Oops!", and: "Your password is \(userPassword) 😇")
+        showAlert(with: "Oops!", and: "Your password is \(User.get(.password)) 😇")
     }
     
     // MARK: private func
