@@ -11,9 +11,9 @@ struct User {
         
         switch data {
         case .name:
-            info = "1"
+            info = "User"
         case .password:
-            info = "1"
+            info = "Password"
         }
         return info
     }

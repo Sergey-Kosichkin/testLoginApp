@@ -50,7 +50,6 @@ class AboutMeViewController: UIViewController {
         if alertSwitcher {
             showAlert(with: "You can only once change App color!",
                       and: "To change next time you need new Log In session!")
-        
         }
     }
     
@@ -91,8 +90,6 @@ class AboutMeViewController: UIViewController {
         
         if !(setting.redSlider.isEnabled){
     alertSwitcher = true
-            
-            
         }
     
     }

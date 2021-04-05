@@ -104,7 +104,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ack-mF-TKS">
-                                <rect key="frame" x="16" y="619" width="358" height="42"/>
+                                <rect key="frame" x="154" y="619" width="82" height="42"/>
                                 <color key="backgroundColor" red="1" green="0.43844272029999998" blue="0.41709511189999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Log out">
@@ -121,9 +121,7 @@
                             <constraint firstItem="nNS-7I-1AO" firstAttribute="top" secondItem="NaC-oj-KET" secondAttribute="top" constant="100" id="IYt-22-P08"/>
                             <constraint firstItem="nNS-7I-1AO" firstAttribute="centerX" secondItem="XpD-3P-tSQ" secondAttribute="centerX" id="Nvg-yL-lLV"/>
                             <constraint firstItem="ack-mF-TKS" firstAttribute="centerX" secondItem="XpD-3P-tSQ" secondAttribute="centerX" id="fCl-Sf-Njp"/>
-                            <constraint firstItem="NaC-oj-KET" firstAttribute="trailing" secondItem="ack-mF-TKS" secondAttribute="trailing" constant="16" id="gqM-vp-iA8"/>
                             <constraint firstItem="NaC-oj-KET" firstAttribute="bottom" secondItem="ack-mF-TKS" secondAttribute="bottom" constant="100" id="hVM-MJ-hqf"/>
-                            <constraint firstItem="ack-mF-TKS" firstAttribute="leading" secondItem="NaC-oj-KET" secondAttribute="leading" constant="16" id="tby-zy-6xL"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" selectedImage="person" catalog="system" systemItem="more" id="Xo3-1K-ol5"/>
