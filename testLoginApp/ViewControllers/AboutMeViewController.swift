@@ -21,6 +21,7 @@ class AboutMeViewController: UIViewController {
     
     private let confidential = "**********"
     private var alertSwitcher = false
+    private var showAlert = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +48,10 @@ class AboutMeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setGradientBackground()
-        if alertSwitcher {
+        if alertSwitcher, showAlert {
             showAlert(with: "You can only once change App color!",
                       and: "To change next time you need new Log In session!")
+            showAlert = false
         }
     }
     
@@ -88,7 +90,7 @@ class AboutMeViewController: UIViewController {
         AppViewColor.share.color.greenColor = setting.greenSlider.value
         AppViewColor.share.color.blueColor = setting.blueSlider.value
         
-        if !(setting.redSlider.isEnabled){
+        if !(setting.redSlider.isEnabled), !alertSwitcher{
     alertSwitcher = true
         }
     
