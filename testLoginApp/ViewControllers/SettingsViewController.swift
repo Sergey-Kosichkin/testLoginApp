@@ -29,10 +29,12 @@ class SettingsViewController: UIViewController {
 
 extension SettingsViewController {
     private func disableSlider() {
-        if AppViewColor.share.color.redColor != nil {
+        if let check = AppViewColor.share.color.change {
+            if check == 0 {
             redSlider.isEnabled = false
             greenSlider.isEnabled = false
             blueSlider.isEnabled = false
+            }
         }
     }
     

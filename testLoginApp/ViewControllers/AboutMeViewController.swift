@@ -91,7 +91,11 @@ class AboutMeViewController: UIViewController {
         AppViewColor.share.color.blueColor = setting.blueSlider.value
         
         if !(setting.redSlider.isEnabled), !alertSwitcher{
+            
     alertSwitcher = true
+            
+        } else if AppViewColor.share.color.change == 1 {
+            AppViewColor.share.color.change = 0
         }
     
     }

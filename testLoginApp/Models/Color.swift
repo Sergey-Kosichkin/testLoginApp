@@ -10,7 +10,7 @@
 
 class AppViewColor {
      
-    var color: (redColor: Float?, greenColor: Float?, blueColor: Float?)
+    var color: (redColor: Float?, greenColor: Float?, blueColor: Float?, change: Int?)
     
     static let share = AppViewColor()
     

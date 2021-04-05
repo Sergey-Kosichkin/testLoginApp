@@ -18,6 +18,7 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         welcomeLabel.text = "Welcome, \(Person.get(.name)) \(Person.get(.surname))!"
         logoutButton.layer.cornerRadius = 10
+        AppViewColor.share.color.change = 1
         
     }
     
