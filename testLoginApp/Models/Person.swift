@@ -5,24 +5,29 @@
 //  Created by Сергей Косичкин on 04.04.2021.
 //
 
-
-struct User {
-    static func get(_ data: Data) -> String {
+struct Person {
+  static func get(_ data: Info) -> String {
         var info = ""
         
         switch data {
         case .name:
-            info = "User"
-        case .password:
-            info = "Password"
+            info = "Ivan"
+        case .surname:
+            info = "Ivanov"
+        case .skill:
+            info = "5"
+        case .age:
+            info = "25"
         }
         return info
     }
 }
 
-enum Data {
+enum Info {
     case name
-    case password
+    case surname
+    case skill
+    case age
 }
 
 

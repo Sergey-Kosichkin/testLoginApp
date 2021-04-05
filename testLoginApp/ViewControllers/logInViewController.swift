@@ -43,25 +43,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             name: UIResponder.keyboardWillHideNotification,
             object: nil )
     }
-
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let welcomeVC = segue.destination as! WelcomeViewController 
-        welcomeVC.userName = userNameTextField.text
+  
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        userNameTextField.text = ""
+        passwordTextField.text = ""
+       
     }
-    
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        //super.
         view.endEditing(true)
     }
     
-    
-    // MARK: IBAction func
-    @IBAction func unwind(for segue: UIStoryboardSegue) {
-        userNameTextField.text = ""
-        passwordTextField.text = ""
-        
-    }
     
     @IBAction func logInPressed() {
         if userNameTextField.text == User.get(.name),
@@ -124,8 +118,11 @@ extension LoginViewController {
             self.view.layoutIfNeeded()
         }
     }
-    
-    private func showAlert(with title: String, and message: String) {
+}
+
+extension UIViewController {
+
+     func showAlert(with title: String, and message: String) {
         let alert = UIAlertController(title: title,
                                       message: message,
                                       preferredStyle: .alert)

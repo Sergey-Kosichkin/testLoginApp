@@ -10,15 +10,24 @@ import UIKit
 class WelcomeViewController: UIViewController {
     
     @IBOutlet var welcomeLabel: UILabel!
+    @IBOutlet var logoutButton: UIButton!
     
-    var userName: String!
+    var color: UIColor!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        welcomeLabel.text = "Welcome, \(Person.get(.name)) \(Person.get(.surname))!"
+        logoutButton.layer.cornerRadius = 10
         
-        welcomeLabel.text = "Welcome, " + userName + " !"
-       
     }
     
-
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setGradientBackground()
+    }
+    
+    @IBAction func logout() {
+        dismiss(animated: true)
+    }
 }
+
